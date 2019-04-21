@@ -29,6 +29,7 @@ func main() {
 	var depositRate float64
 	fmt.Println("Please enter your deposit and rate")
 	fmt.Scanln(&depositSum, &depositRate)
+	fmt.Println("Your deposit after 5 years:", depositCalculator(depositSum, depositRate))
 
 }
 
@@ -66,7 +67,6 @@ func depositCalculator(depositSum, depositRate float64) float64 {
 	var rate = depositRate / 100
 	for i := 1; i <= 5; i++ {
 		result = (result + (result * rate))
-		return result
 	}
 	return result
 }
