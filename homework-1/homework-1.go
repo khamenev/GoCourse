@@ -22,7 +22,14 @@ func main() {
 	var c = triangleHypotenuse(a, b) // гипотенуза
 	fmt.Println("The area of a right triangle:", triangleSqrt(a, b))
 	fmt.Println("The perimeter of a right triangle:", trianglePerimeter(a, b, c))
-	fmt.Println(c)
+	fmt.Println("The hypotenuse of a right triangle:", c)
+
+	//Сумма депозита
+	var depositSum float64
+	var depositRate float64
+	fmt.Println("Please enter your deposit and rate")
+	fmt.Scanln(&depositSum, &depositRate)
+
 }
 
 // Написать программу для конвертации рублей в доллары. Программа запрашивает сумму в
@@ -49,4 +56,17 @@ func triangleHypotenuse(a, b float64) float64 {
 //Функция по вычислению периметра
 func trianglePerimeter(a, b, c float64) float64 {
 	return a + b + c
+}
+
+//Пользователь вводит сумму вклада в банк и годовой процент. Найти сумму вклада через 5
+//лет
+
+func depositCalculator(depositSum, depositRate float64) float64 {
+	var result = depositSum
+	var rate = depositRate / 100
+	for i := 1; i <= 5; i++ {
+		result = (result + (result * rate))
+		return result
+	}
+	return result
 }
