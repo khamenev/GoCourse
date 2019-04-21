@@ -64,7 +64,7 @@ func trianglePerimeter(a, b, c float64) float64 {
 
 func depositCalculator(depositSum, depositRate float64) float64 {
 	var result = depositSum
-	var rate = depositRate / 100
+	var rate = depositRate / 100 //для удобства
 	for i := 1; i <= 5; i++ {
 		result = (result + (result * rate))
 	}
