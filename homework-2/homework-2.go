@@ -9,7 +9,6 @@ Sergei Khamenev
 import "fmt"
 
 func main() {
-
 	// Задание 	1
 	fmt.Println("Enter a number:")
 	var n int
@@ -20,7 +19,8 @@ func main() {
 	isEven(n)
 	// Задание 2
 	third(n)
-
+	// Задание 3
+	fibonacciNumners()
 }
 
 // Написать функцию, которая определяет, четное ли число.
@@ -39,5 +39,15 @@ func third(n int) {
 		fmt.Printf("\n%v can be divided by 3", n)
 	} else {
 		fmt.Printf("\n%v cannot be divided by 3", n)
+	}
+}
+
+// Написать функцию, которая последовательно выводит на экран N первых чисел Фибоначчи,
+// начиная от 0. (числа Фибоначчи определяются соотношениями ​ Fn=Fn-1 + Fn-2)
+
+func fibonacciNumners() {
+	for Fn := 3; Fn <= 100; Fn++ {
+		Fn = ((Fn - 1) + (Fn - 2))
+		fmt.Println(Fn)
 	}
 }
