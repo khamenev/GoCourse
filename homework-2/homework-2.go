@@ -9,7 +9,7 @@ Sergei Khamenev
 import "fmt"
 
 func main() {
-	// Задание 	1
+	// Задание 1
 	fmt.Println("Enter a number:")
 	var n int
 	_, err := fmt.Scanln(&n)
