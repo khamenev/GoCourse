@@ -1,7 +1,7 @@
 package main
 
 /*
-Homework-2
+Homework-2: Tasks 1-4
 Sergei Khamenev
 24.04.2019
 */
@@ -19,52 +19,41 @@ func main() {
 	isEven(n)
 	// Задание 2
 	third(n)
-	// Задание 3
-	fmt.Println(fib(99))
+	// Задание 3 и 4
+	fmt.Printf("\n %v", fib(30))
 }
 
-// Написать функцию, которая определяет, четное ли число.
+// 1. Написать функцию, которая определяет, четное ли число.
 func isEven(n int) {
 	if n%2 == 0 {
-		fmt.Print(n, " is Even")
+		fmt.Println(n, " is Even")
 	} else {
 		fmt.Println(n, "is not even")
 	}
 }
 
-// Написать функцию, которая определяет, делится ли число без остатка на 3.
+// 2. Написать функцию, которая определяет, делится ли число без остатка на 3.
 
 func third(n int) {
 	if n%3 == 0 {
-		fmt.Printf("\n%v can be divided by 3", n)
+		fmt.Printf("%v can be divided by 3", n)
 	} else {
-		fmt.Printf("\n%v cannot be divided by 3", n)
+		fmt.Printf("%v cannot be divided by 3", n)
 	}
 }
 
-// Написать функцию, которая последовательно выводит на экран N первых чисел Фибоначчи,
-// начиная от 0. (числа Фибоначчи определяются соотношениями ​ Fn=Fn-1 + Fn-2)
+// 3. Написать функцию, которая последовательно выводит на экран N первых чисел Фибоначчи,
+// 	  начиная от 0. (числа Фибоначчи определяются соотношениями ​ Fn=Fn-1 + Fn-2)
+// 4. Написать функцию, которая заполняет срез числами Фибоначчи.
 
-/* func fibonacciNumners(x int) {
-	var fn0 = 1
-	var fn1 = 2
-	fmt.Println(fn0)
-	fmt.Println(fn1)
-	for fn := 2; fn <= x; fn += 1 {
-		fn = (fn - 1) + (fn - 2)
-		fmt.Println(fn)
-	}
-
-} */
-
-func fib(N uint) uint {
-	var table []uint
+func fib(N uint) []uint {
+	var table []uint // new slise
 	table = make([]uint, N+1)
-	table[0] = 0
-	table[1] = 1
-	for i := uint(2); i <= N; i += 1 {
+	table[0] = 0 // zero element
+	table[1] = 1 // first element
+	for i := uint(2); i <= N; i++ {
 		table[i] = table[i-1] + table[i-2]
-		fmt.Println(table[i])
+		//fmt.Println(table[i])
 	}
-	return table[N]
+	return table
 }
