@@ -20,7 +20,7 @@ func main() {
 	// Задание 2
 	third(n)
 	// Задание 3
-	fibonacciNumners()
+	fmt.Println(fib(99))
 }
 
 // Написать функцию, которая определяет, четное ли число.
@@ -45,10 +45,26 @@ func third(n int) {
 // Написать функцию, которая последовательно выводит на экран N первых чисел Фибоначчи,
 // начиная от 0. (числа Фибоначчи определяются соотношениями ​ Fn=Fn-1 + Fn-2)
 
-func fibonacciNumners() {
-	for Fn := 3; Fn <= 100; Fn++ {
-		Fn = ((Fn - 1) + (Fn - 2))
-		fmt.Println(Fn)
+/* func fibonacciNumners(x int) {
+	var fn0 = 1
+	var fn1 = 2
+	fmt.Println(fn0)
+	fmt.Println(fn1)
+	for fn := 2; fn <= x; fn += 1 {
+		fn = (fn - 1) + (fn - 2)
+		fmt.Println(fn)
 	}
+
+} */
+
+func fib(N uint) uint {
+	var table []uint
+	table = make([]uint, N+1)
+	table[0] = 0
+	table[1] = 1
+	for i := uint(2); i <= N; i += 1 {
+		table[i] = table[i-1] + table[i-2]
+		fmt.Println(table[i])
+	}
+	return table[N]
 }
-..
