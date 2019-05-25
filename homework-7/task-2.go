@@ -26,22 +26,14 @@ func main() {
 	// возведение в квадрат
 
 	go func() {
-		for {
-			x, ok := <-naturals
-			if !ok {
-				break // канал закрыт и пуст
-			}
+		for x := range naturals {
 			squares <- x * x
 		}
 		close(squares)
 	}()
 
 	// печать
-	for {
-		x, ok := <-squares
-		if !ok {
-			break // канал закрыт и пуст
-		}
+	for x := range squares {
 		fmt.Println(x)
 	}
 
